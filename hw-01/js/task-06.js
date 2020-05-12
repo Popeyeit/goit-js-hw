@@ -1,24 +1,37 @@
 'use strict';
 let input;
 let total = 0;
-input = (Number(input))
 
-for (let i = 0; i >= 0 && i <= 99999999; i = +input) {
-    input = prompt('Введите число');
-    total += i;
-    console.log(typeof input);
+// for (let i = 0; i => 0; i = +input) {
+//   total += i;
+//   input = Number(input);
+//   input = prompt('Введите число');
+//   console.log(typeof input);
 
-    if (input === null) {
-        alert(`Общая сумма чисел равна ${total}`);
-        break;
-    }
+//   if (input === null) {
+//     alert(`Общая сумма чисел равна ${total}`);
+//     break;
+//   }
+//   if (isNaN(input)) {
+//     alert('Было введено не число, попробуйте еще раз');
+//     continue;
+//   }
+// }
 
-}
-
+do {
+  let i = 0;
+  input = prompt('Введите число');
+  i = +input;
+  total += i;
+  console.log(typeof input);
+  if (input === null) {
+    alert(`Общая сумма чисел равна ${total}`);
+    break;
+  }
+  if (isNaN(input)) {
+    alert('Было введено не число, попробуйте еще раз');
+    continue;
+  }
+} while (input !== null);
 
 console.log(total);
-
-// if (input = (isNaN(input)) && typeof input === (isNaN)) {
-//     alert('asdasd')
-//     continue;
-// }
