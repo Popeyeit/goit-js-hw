@@ -1,37 +1,45 @@
 'use strict';
-let input;
+let input = 0;
 let total = 0;
 
-// for (let i = 0; i => 0; i = +input) {
-//   total += i;
-//   input = Number(input);
-//   input = prompt('Введите число');
-//   console.log(typeof input);
 
-//   if (input === null) {
-//     alert(`Общая сумма чисел равна ${total}`);
-//     break;
-//   }
-//   if (isNaN(input)) {
-//     alert('Было введено не число, попробуйте еще раз');
-//     continue;
-//   }
-// }
 
-do {
-  let i = 0;
-  input = prompt('Введите число');
-  i = +input;
-  total += i;
-  console.log(typeof input);
-  if (input === null) {
-    alert(`Общая сумма чисел равна ${total}`);
-    break;
-  }
-  if (isNaN(input)) {
-    alert('Было введено не число, попробуйте еще раз');
-    continue;
-  }
-} while (input !== null);
+for (let i; i => 0;) {
 
+    input = prompt('Введите число');
+    const counterInput = Number(input)
+    i = +counterInput
+    if (!isNaN(counterInput)) {
+        total += i
+    }
+
+    if (isNaN(counterInput)) {
+        alert('Было введено не число, попробуйте еще раз');
+        continue;
+    }
+    console.log(typeof counterInput);
+    if (counterInput === 0) {
+        alert(`Общая сумма чисел равна ${total}`);
+        break;
+    }
+}
 console.log(total);
+
+// do {
+//     input = prompt('Введите число');
+//     let counterInput = Number(input)
+//     console.log(typeof input);
+//     let i;
+//     i = +counterInput;
+//     total += i;
+//     if (isNaN(counterInput)) {
+//         alert('Было введено не число, попробуйте еще раз');
+//         continue;
+//     }
+
+//     if (counterInput === 0) {
+//         alert(`Общая сумма чисел равна ${total}`);
+//         break;
+//     }
+
+// } while (input > 0);
