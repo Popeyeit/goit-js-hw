@@ -86,7 +86,6 @@ const account = {
     getTransactionTotal(type) {
         let result = 0;
         for (const operation of this.transactions) {
-            console.log(operation);
             if (operation.type === type) {
                 result += operation.amount
             }
