@@ -19,16 +19,27 @@ const inventory = {
     //     }
     //   }
     // };
-    this.items = [...this.items];
+    // this.items = [...this.items];
+    // const fn = function () {
+    //   for (let i = 0; i < this.items.length; i++) {
+    //     if (this.items[i].includes(itemName)) {
+    //       this.items.splice(i, 1);
+    //     }
+    //   }
+    // };
+    // // fn()
+    // fn.call(inventory);
+
     const fn = function () {
-      for (let i = 0; i < this.items.length; i++) {
-        if (this.items[i].includes(itemName)) {
-          this.items.splice(i, 1);
+      const array = [];
+      for (const element of this.items) {
+        if (element !== itemName) {
+          array.push(element);
         }
       }
+      return array;
     };
-    // fn()
-    fn.call(inventory);
+    this.items = fn.call(inventory);
   },
 };
 
