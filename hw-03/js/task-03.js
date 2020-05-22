@@ -2,6 +2,7 @@
 //     const keys = Object.keys(employees)
 //     let bestIndicator = 0
 //     let bestEmployee = ''
+
 //     for (const key of keys) {
 //         if (employees[key] > bestIndicator) {
 //             bestIndicator = employees[key]

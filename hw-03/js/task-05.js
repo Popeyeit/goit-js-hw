@@ -1,35 +1,33 @@
 const products = [{
         name: 'Радар',
         price: 1300,
-        quantity: 4
+        quantity: 4,
     },
     {
         name: 'Сканер',
         price: 2700,
-        quantity: 3
+        quantity: 3,
     },
     {
         name: 'Дроид',
         price: 400,
-        quantity: 7
+        quantity: 7,
     },
     {
         name: 'Захват',
         price: 1200,
-        quantity: 2
+        quantity: 2,
     },
 ];
-
+console.log(products);
 const getAllPropValues = function (arr, prop) {
-    let result = []
+    let result = [];
     for (const key of arr) {
         if (key[prop]) {
-            result.push(key[prop])
+            result.push(key[prop]);
         }
-
     }
-    return result
-
+    return result;
 };
 
 /*
@@ -40,7 +38,6 @@ console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер
 console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
 
 console.log(getAllPropValues(products, 'category')); // []
-
 
 // Напиши функцию getAllPropValues(arr, prop), которая получает массив объектов и имя свойства.
 // Возвращает массив значений определенного свойства prop из каждого объекта в массиве.
