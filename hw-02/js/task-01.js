@@ -8,14 +8,10 @@
 // };
 
 const logItems = (array) => {
-  for (let i = 0; i < array.length; i++) {
-    console.log(`${i+1} - ${array[i]}`)
-  }
+    for (let i = 0; i < array.length; i++) {
+        console.log(`${i+1} - ${array[i]}`)
+    }
 };
-
-
-
-
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
