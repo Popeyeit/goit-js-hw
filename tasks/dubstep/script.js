@@ -1,5 +1,6 @@
 function songDecoder(song) {
     const songWithoutWUB = song.split('WUB')
+    console.log(songWithoutWUB);
     const newArray = []
     for (let i = 0; i < songWithoutWUB.length; i++) {
         if (songWithoutWUB[i] !== '') {
