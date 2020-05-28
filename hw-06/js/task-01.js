@@ -183,7 +183,9 @@ const users = [
 // };
 // ***************** Нормальный вариант))
 // const getUsersWithFriend = (users, friendName) => {
-//   return users.filter(user => user.friends.includes(friendName));
+//   return users
+//     .filter(user => user.friends.includes(friendName))
+//     .map(item => item.name);
 // };
 // // ***********************наркомания
 //
@@ -194,6 +196,16 @@ const users = [
 //       if (users[i].friends[j] === friendName) {
 //         array.push(users[i].name);
 //       }
+//     }
+//   }
+//   return array;
+// };
+
+// const getUsersWithFriend = function (users, friendName) {
+//   const array = [];
+//   for (let i = 0; i < users.length; i++) {
+//     if (users[i].friends.includes(friendName)) {
+//       array.push(users[i].name);
 //     }
 //   }
 //   return array;
@@ -224,6 +236,9 @@ const users = [
 // они должны быть отсортированы в алфавитном порядке.
 //
 // **********Незная о чудо способах*********
+
+// skills: ['ex', 'culpa', 'nostrud'],
+
 // const getSortedUniqueSkills = users => {
 //   return users
 //     .reduce((acc, item) => {
@@ -243,4 +258,4 @@ const users = [
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud'
 
 // console.log('scientist', scientist);
-// const res = scientist.map(elem => ({ ...elem, test: 'test' }));
+// const res = scientist.map(elem => ({ ...elem, test: 'test' }))
