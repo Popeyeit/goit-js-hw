@@ -1,41 +1,29 @@
-const Hotel = {
+const tweets = [
+  { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+  { id: '001', likes: 2, tags: ['html', 'css'] },
+  { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+  { id: '003', likes: 8, tags: ['css', 'react'] },
+  { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+];
 
-}
+// Пройдем по всем элементам коллекции и добавим значения свойства tags
+// к аккумулятору, начальное значение которого укажем пустым массивом [].
+// На каждой итерации пушим в аккумулятор все элементы tweet.tags и возвращаем его.
+const tags = tweets.reduce((allTags, tweet) => {
+  allTags.push(...tweet.tags);
 
-const hotel = function ({
-    name = 'none',
-    age = 0,
-    weight = 40
-}) {
-    this.name = name;
-    this.age = age;
-    this.weight = weight;
-}
-hotel.call(Hotel, {
-    name: 'Alex',
-    age: 18,
-    weight: 80
-})
-console.log(Hotel);
+  return allTags;
+}, []);
 
+console.log(tags);
 
-const User = function ({
-    name = 'noone',
-    age = 6,
-    weight = 40,
-    status = 'nomarried'
-}) {
-    this.name = name;
-    this.weight = weight;
-    this.status = status;
-    this.age = age;
-    console.log(this);
-}
+// Наверное сбор тегов не одиночная операция, поэтому напишем функцию
+// для сбора тегов из коллекции
+const getTags = tweets =>
+  tweets.reduce((allTags, tweet) => {
+    allTags.push(...tweet.tags);
 
-const alex = new User({
-    name: 'Alex',
-    age: 22,
-    weight: 66,
-    status: 'in active searching'
-})
-console.log(alex);
+    return allTags;
+  }, []);
+
+console.log(getTags(tweets));
