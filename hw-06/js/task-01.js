@@ -181,6 +181,7 @@ const users = [
 //     })
 //     .map(item => item.name);
 // };
+
 // ***************** Нормальный вариант))
 // const getUsersWithFriend = (users, friendName) => {
 //   return users
@@ -243,7 +244,7 @@ const users = [
 //   return users
 //     .reduce((acc, item) => {
 //       item.skills.forEach(item =>
-//         acc.includes(item) ? false : acc.push(item),
+//         acc.includes(item) ? console.log("don't find") : acc.push(item),
 //       );
 //       return acc;
 //     }, [])

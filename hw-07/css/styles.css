@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#gallery {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+@keyframes spaceX {
+    0% {
+
+        transform: skew(30deg) translate(-800px, 800px);
+    }
+
+    50% {
+        transform: rotate(0.5turn) translate(-200px, 300px)
+    }
+
+    80% {
+        transform: skew(0deg) rotate(0.9turn)
+    }
+
+    100% {
+        transform: translate(0)
+    }
+}
+
+.list__item {
+    animation: spaceX linear 2s;
+    border: 10px solid;
+}
