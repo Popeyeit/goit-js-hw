@@ -64,6 +64,7 @@ const handleRender = (event) => {
 }
 const handleDestroy = (event) => {
     divRef.innerHTML = ''
+    numberValue = 20
 }
 
 renderRef.addEventListener('click', handleRender)
