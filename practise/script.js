@@ -202,33 +202,33 @@
 // obj['js'] = obj['js'] += 1;
 // console.log(obj);
 
-const tweets = [
-  {
-    id: '000',
-    likes: 5,
-    tags: ['js', 'nodejs'],
-  },
-  {
-    id: '001',
-    likes: 2,
-    tags: ['html', 'css'],
-  },
-  {
-    id: '002',
-    likes: 17,
-    tags: ['html', 'js', 'nodejs'],
-  },
-  {
-    id: '003',
-    likes: 8,
-    tags: ['css', 'react'],
-  },
-  {
-    id: '004',
-    likes: 0,
-    tags: ['js', 'nodejs', 'react'],
-  },
-];
+// const tweets = [
+//   {
+//     id: '000',
+//     likes: 5,
+//     tags: ['js', 'nodejs'],
+//   },
+//   {
+//     id: '001',
+//     likes: 2,
+//     tags: ['html', 'css'],
+//   },
+//   {
+//     id: '002',
+//     likes: 17,
+//     tags: ['html', 'js', 'nodejs'],
+//   },
+//   {
+//     id: '003',
+//     likes: 8,
+//     tags: ['css', 'react'],
+//   },
+//   {
+//     id: '004',
+//     likes: 0,
+//     tags: ['js', 'nodejs', 'react'],
+//   },
+// ];
 
 // const newTweets = tweets.map(item => {
 //   if (item.id === '003') {
@@ -240,3 +240,30 @@ const tweets = [
 // console.log(tweets[3].tags);
 // console.log(newTweets[3].tags);
 // console.log(newTweets);
+
+
+const nav = document.querySelector(".js-nav");
+
+nav.addEventListener("click", handleNavClick);
+
+function handleNavClick(event) {
+  event.preventDefault();
+
+  const target = event.target;
+  console.log("event target: ", target); // посмотрите что тут
+  console.log(target.nodeName);
+  // Проверяем тип узла, если не ссылка выходим из функции
+  if (target.nodeName !== "A") return;
+
+  setActiveLink(target);
+}
+
+function setActiveLink(nextActiveLink) {
+  const currentActiveLink = nav.querySelector("a.active");
+
+  if (currentActiveLink) {
+    currentActiveLink.classList.remove("active");
+  }
+
+  nextActiveLink.classList.add("active");
+}
