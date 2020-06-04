@@ -11,6 +11,7 @@ export const template = function ({
     <img
       class="gallery__image"
       src=""
+      data-sourcesmall = "${preview}"
       data-source="${original}"
       alt="${description}"
     />

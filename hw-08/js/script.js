@@ -36,6 +36,7 @@ function handleClickOpen(event) {
     } = event.target.dataset
     overlayImgRef.src = source
     currentImg = event.target
+    console.log(event.target);
 }
 
 function changeImage(event) {
@@ -98,6 +99,108 @@ function hadleKeydown(event) {
 // 
 // 
 // 
+
+
+// const temp = document.querySelector('.template').innerHTML.trim()
+// console.log(temp);
+// if (event.target.value.trim())
+
+
+// 
+// 
+// 
+// 
+
+
+// ВТОРОЙ ВАРИАНТ С ИНДЕКСОМ
+
+// const listRef = document.querySelector('.js-gallery')
+// const lightBoxRef = document.querySelector('.js-lightbox')
+// const overlayImgRef = document.querySelector('.lightbox__image')
+// const overlayBtnRef = document.querySelector('button[data-action="close-lightbox"]')
+// const contentRef = document.querySelector('.lightbox__content')
+
+// listRef.addEventListener('click', handleClickOpen)
+
+// const allLiGallery = galleryItems.map((item) => {
+//     const li = template(
+//         item
+//     )
+//     return li
+// }).join('')
+
+// listRef.insertAdjacentHTML('beforeend', allLiGallery)
+
+// let currentImgIdx = ''
+// const arrayImgIdx = listRef.querySelectorAll('img')
+// const arrayImgValue = [...arrayImgIdx]
+// const arrayMapImg = arrayImgValue.map((item) => {
+//     return item.dataset.source
+// })
+
+
+
+
+// function handleClickOpen(event) {
+//     event.preventDefault()
+//     overlayBtnRef.addEventListener('click',
+//         handleCloseModal)
+//     contentRef.addEventListener('click', handleCloseOverlay)
+//     window.addEventListener('keydown', hadleKeydown)
+//     window.addEventListener('keydown', changeImage)
+//     lightBoxRef.classList.add('is-open')
+//     const {
+//         source
+//     } = event.target.dataset
+//     overlayImgRef.src = source
+//     currentImgIdx = source
+// }
+
+// function changeImage(event) {
+//     if (event.code === 'ArrowLeft') {
+//         const currentImg = arrayMapImg.indexOf(currentImgIdx)
+//         const leftImg = arrayMapImg[currentImg - 1]
+//         overlayImgRef.src = leftImg
+//         currentImgIdx = leftImg
+//     }
+
+//     if (event.code === 'ArrowRight') {
+//         const currentImg = arrayMapImg.indexOf(currentImgIdx)
+//         const rightImg = arrayMapImg[currentImg + 1]
+//         overlayImgRef.src = rightImg
+//         currentImgIdx = rightImg
+//     }
+// }
+
+
+// function handleCloseOverlay(event) {
+//     if (event.currentTarget === event.target) {
+//         handleCloseModal()
+//     }
+// }
+
+// function handleCloseModal() {
+//     lightBoxRef.classList.remove('is-open')
+//     overlayImgRef.src = ''
+//     overlayBtnRef.removeEventListener('click',
+//         handleCloseModal)
+//     contentRef.removeEventListener('click', handleCloseOverlay)
+//     window.removeEventListener('keydown', hadleKeydown)
+//     window.removeEventListener('keydown', changeImage)
+// }
+
+// function hadleKeydown(event) {
+//     if (event.code === 'Escape') {
+//         handleCloseModal()
+//     }
+// }
+// 
+// 
+// 
+// 
+
+
+
 const options = {
     rootMargin: '400px'
 }
@@ -110,9 +213,9 @@ function callback(img) {
         entries.forEach(img => {
             if (img.isIntersecting) {
                 const {
-                    source
+                    sourcesmall
                 } = img.target.dataset;
-                img.target.src = source
+                img.target.src = sourcesmall
                 observer.disconnect()
             }
         })
@@ -120,7 +223,3 @@ function callback(img) {
 }
 const arrayImg = document.querySelectorAll('.js-gallery img')
 arrayImg.forEach(img => callback(img))
-
-const temp = document.querySelector('.template').innerHTML.trim()
-console.log(temp);
-if (event.target.value.trim())
