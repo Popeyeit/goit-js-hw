@@ -39,15 +39,15 @@ function handleClickOpen(event) {
 }
 
 function changeImage(event) {
-    if (event.code === 'ArrowRight' && currentImg.closest('li').nextSibling) {
+    if (event.code === 'ArrowRight' || event.code === 'KeyD' && currentImg.closest('li').nextSibling) {
         toRight()
+        console.log(event.code);
     }
-    if (event.code === 'ArrowLeft' && currentImg.closest('li').previousSibling) {
+    if (event.code === 'ArrowLeft' || event.code === 'KeyA' && currentImg.closest('li').previousSibling) {
         toLeft()
-
+        console.log(event.code);
     }
-    console.log(event.target);
-    console.log(event.code);
+
 }
 
 function toLeft() {
