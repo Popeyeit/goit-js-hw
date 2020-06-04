@@ -47,7 +47,6 @@ function changeImage(event) {
         toLeft()
         console.log(event.code);
     }
-
 }
 
 function toLeft() {
@@ -93,3 +92,35 @@ function hadleKeydown(event) {
         handleCloseModal()
     }
 }
+
+// 
+// 
+// 
+// 
+// 
+const options = {
+    rootMargin: '400px'
+}
+
+function callback(img) {
+    const intrObs = new IntersectionObserver(test, options)
+    intrObs.observe(img)
+
+    function test(entries, observer) {
+        entries.forEach(img => {
+            if (img.isIntersecting) {
+                const {
+                    source
+                } = img.target.dataset;
+                img.target.src = source
+                observer.disconnect()
+            }
+        })
+    }
+}
+const arrayImg = document.querySelectorAll('.js-gallery img')
+arrayImg.forEach(img => callback(img))
+
+const temp = document.querySelector('.template').innerHTML.trim()
+console.log(temp);
+if (event.target.value.trim())

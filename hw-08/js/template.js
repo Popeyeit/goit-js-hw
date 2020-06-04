@@ -10,7 +10,7 @@ export const template = function ({
   >
     <img
       class="gallery__image"
-      src="${preview}"
+      src=""
       data-source="${original}"
       alt="${description}"
     />
