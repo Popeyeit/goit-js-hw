@@ -112,7 +112,7 @@ function hadleKeydown(event) {
 // 
 
 
-// ВТОРОЙ ВАРИАНТ С ИНДЕКСОМ
+// ----------------------------------------------------------ВТОРОЙ ВАРИАНТ С ИНДЕКСОМ
 
 // const listRef = document.querySelector('.js-gallery')
 // const lightBoxRef = document.querySelector('.js-lightbox')
@@ -131,15 +131,13 @@ function hadleKeydown(event) {
 
 // listRef.insertAdjacentHTML('beforeend', allLiGallery)
 
-// let currentImgIdx = ''
+// // let currentImgIdx = ''
 // const arrayImgIdx = listRef.querySelectorAll('img')
 // const arrayImgValue = [...arrayImgIdx]
 // const arrayMapImg = arrayImgValue.map((item) => {
 //     return item.dataset.source
 // })
-
-
-
+// let count = 0
 
 // function handleClickOpen(event) {
 //     event.preventDefault()
@@ -153,22 +151,37 @@ function hadleKeydown(event) {
 //         source
 //     } = event.target.dataset
 //     overlayImgRef.src = source
-//     currentImgIdx = source
+//     count = arrayMapImg.indexOf(source)
+// currentImgIdx = source
 // }
 
+//  ------------ поиск по индексу без счетчика.
+// // function changeImage(event) {
+// //     if (event.code === 'ArrowLeft') {
+// //         const currentImg = arrayMapImg.indexOf(currentImgIdx)
+// //         const leftImg = arrayMapImg[currentImg - 1]
+// //         overlayImgRef.src = leftImg
+// //         currentImgIdx = leftImg
+// //     }
+
+// //     if (event.code === 'ArrowRight') {
+// //         const currentImg = arrayMapImg.indexOf(currentImgIdx)
+// //         const rightImg = arrayMapImg[currentImg + 1]
+// //         overlayImgRef.src = rightImg
+// //         currentImgIdx = rightImg
+// //     }
+
+// // }
+// ----------------- счетчик
 // function changeImage(event) {
-//     if (event.code === 'ArrowLeft') {
-//         const currentImg = arrayMapImg.indexOf(currentImgIdx)
-//         const leftImg = arrayMapImg[currentImg - 1]
-//         overlayImgRef.src = leftImg
-//         currentImgIdx = leftImg
+//     if (event.code === 'ArrowLeft' && count >= 0) {
+//         overlayImgRef.src = arrayMapImg[count - 1]
+//         count--
 //     }
 
-//     if (event.code === 'ArrowRight') {
-//         const currentImg = arrayMapImg.indexOf(currentImgIdx)
-//         const rightImg = arrayMapImg[currentImg + 1]
-//         overlayImgRef.src = rightImg
-//         currentImgIdx = rightImg
+//     if (event.code === 'ArrowRight' && count < arrayMapImg.length) {
+//         overlayImgRef.src = arrayMapImg[count + 1]
+//         count++
 //     }
 // }
 
@@ -194,11 +207,13 @@ function hadleKeydown(event) {
 //         handleCloseModal()
 //     }
 // }
-// 
-// 
-// 
-// 
 
+
+
+
+// 
+// 
+// 
 
 
 const options = {
