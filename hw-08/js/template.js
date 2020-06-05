@@ -1,8 +1,10 @@
+let count = -1
 export const template = function ({
   preview,
   original,
   description
 }) {
+  count++
   return `<li class="gallery__item">
   <a
     class="gallery__link"
@@ -14,9 +16,11 @@ export const template = function ({
       data-sourcesmall = "${preview}"
       data-source="${original}"
       alt="${description}"
+      data-index = "${count}"
     />
   </a>
 </li>`
+
 }
 
 
